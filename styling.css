@@ -59,6 +59,9 @@ h2 {
 p {
     font-family: 'Nunito', sans-serif;
 }
+.clickable {
+    cursor: pointer;
+}
 
 /* ABOUT */
 
@@ -135,6 +138,7 @@ button {
     font-size: 20px;
 
 }
+
 
 
 /* FEED */
