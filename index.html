@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="styling.css">
 
+
+
     <title>Notice Login</title>
 </head>
 
@@ -25,10 +27,10 @@
     <header>
 
 
-       
+
         <a href="about.html">about</a>
         <a href="feed.html" class="disabled">feed</a>
-    
+
 
     </header>
     <main>
@@ -42,7 +44,9 @@
         </div>
 
 
- <!--        <h2>login</h2> -->
+
+
+        <!--        <h2>login</h2> -->
 
         <form action="">
 
@@ -60,31 +64,36 @@
             <i class="fa-solid fa-angles-down"></i>
         </div>
 
-      <!--   <h2>register</h2> -->
+        <!--   <h2>register</h2> -->
 
-        <form action="">
 
-            <div><label for="">username</label>
-                <input type="text">
-            </div>
-
-            <div><label for="">e-mail</label>
-                <input type="text">
-            </div>
-
+        <form id="register-form">
             <div>
-                <label for="">password</label>
-                <input type="text">
+                <label>username</label>
+                <input id="register-username">
             </div>
-
+            <div>
+                <label>e-mail</label>
+                <input id="register-email">
+            </div>
+            <div>
+                <label>password</label>
+                <input id="register-password">
+            </div>
             <button>register</button>
         </form>
+
+        <p> The username must not contain punctuation symbols apart from underscore (_).</p>
+        <p> The email must be a valid stud.noroff.no or noroff.no email address.</p>
+        <p> The password value must be at least 8 characters.</p>
+        <p> When registered you can use your registered account to log in.</p>
 
 
     </main>
     <footer>
 
     </footer>
+    <script src="js/register.js"></script>
 
 </body>
 
