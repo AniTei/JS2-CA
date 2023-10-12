@@ -1,4 +1,5 @@
 const registerForm = document.querySelector("#register-form");
+console.log(registerForm);
 
 //got 201 with jsonplaceholder
 //add real api
