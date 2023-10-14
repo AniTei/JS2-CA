@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="styling.css">
 
-    <title>Notice Filter</title>
+    <title>Notice Feed</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
     </header>
     <main>
 
-        <h1>feed, testing filter</h1>
+        <h1>feed</h1>
 
 
         <!-- probably need to make filter and search into something else, 
@@ -50,11 +50,23 @@
 
         <form id="create-post">
 
-            <input type="textarea" class="publish-form">
+
+
+            <label>title</label>
+            <input name="title">
+
+            <label>body</label>
+            <input name="body">  
+            
+            <label>tags</label>
+            <input name="tags">
+
+            <label>media</label>
+            <input name="media">  
+            
+         
             <button class="publish-button clickable">publish</button>
             <!-- make it wrap -->
-
-            
 
         </form>
 
@@ -72,7 +84,7 @@
     <footer>
 
     </footer>
-    <script src="js/filterPosts.js"></script>
+    <script src="js/displayPosts.js"></script>
 </body>
 
 </html>

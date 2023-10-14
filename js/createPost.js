@@ -34,3 +34,11 @@ function abc(event) {
 
 
 formForNewPost.addEventListener('submit', abc);
+
+
+{
+    "title": "string", // Required
+    "body": "string", // Optional
+    "tags": ["string"], // Optional
+    "media": "https://url.com/image.jpg" // Optional
+  }
