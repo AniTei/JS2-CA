@@ -54,7 +54,7 @@ async function getPosts() {
 
                     <div class="open">
                         
-                        <a href="specific-post.html?id=${json[i].id}" >
+                        <a href="post-opened.html?id=${json[i].id}" >
                         open
                         </a>
                     </div>

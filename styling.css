@@ -72,7 +72,7 @@ p {
 
 /* INDEX */
 
-img {
+.poppy-img {
     width: 70%;
     position: relative;
     top: 50px;
@@ -203,4 +203,10 @@ button {
 
 .by-id-p {
     margin-left: 8%;
+}
+
+.post-container div {
+
+    padding: 20px;
+  
 }
