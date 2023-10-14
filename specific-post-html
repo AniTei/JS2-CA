@@ -61,7 +61,8 @@
 
         <a href="postOpened.html">post opened</a>
 
-
+<h2>edit</h2>
+<h2>delete</h2>
 
         <div class="posts-container">
 
@@ -98,24 +99,6 @@
             </div>
 
 
-
-
-            `<div class="post">
-
-                <p>Today I noticed...</p>
-                <p class="post-title">${json[i].title}</p>
-                <p class="post-body">${json[i].body}</p>
-                <img class="post-media" src="${json[i].media}">
-
-                <div class="icons">
-                    <a href="specific-post.html?id=${json[i].id}" class="icon">
-                        open
-                    </a>
-
-                </div>
-            </div>`
-
-
             <div class="post">
 
                 <p>Today I noticed...</p>
@@ -123,8 +106,8 @@
                     didn’t notice it before, and now I see it everywhere. </p>
 
                 <div class="icons">
-                    <i class="fa-solid fa-pencil icon"></i>
-                    <i class="fa-solid fa-trash icon"></i>
+                    <i class="fa-solid fa-pencil"></i>
+                    <i class="fa-solid fa-trash"></i>
                     <i class="fa-solid fa-up-right-from-square"></i>
                 </div>
             </div>
@@ -139,7 +122,7 @@
     <footer>
 
     </footer>
-    <script src="js/displayPosts.js"></script>
+    <script src="js/getposts.js"></script>
 </body>
 
 </html>

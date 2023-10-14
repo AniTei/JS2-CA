@@ -47,13 +47,18 @@ async function LoginUser(userInput) {
     console.log(response);
     console.log(json.accessToken);
 
-    localStorage.setItem('token' , json.accessToken);
+    localStorage.setItem('token', json.accessToken);
 
-    return;
+    /* localStorage.clear();
 
-    /* console.log (response.accessToken); */
+    return; */
 
     if (response.ok) {
+
+        function takeUserToFeed() {
+            window.location.href = "feed.html";
+        }
+
         takeUserToFeed();
     }
 }
@@ -65,11 +70,10 @@ async function LoginUser(userInput) {
 // store accessitem in order to retrieve it on diff pages?
 
 // on success take user to feed
-function takeUserToFeed() {
-    window.location.href = "feed.html";
-}
 
 
 
 
 
+
+// do I also need to pass the token by a querysting? 

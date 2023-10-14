@@ -59,6 +59,7 @@ h2 {
 p {
     font-family: 'Nunito', sans-serif;
 }
+
 .clickable {
     cursor: pointer;
 }
@@ -175,29 +176,27 @@ button {
 .post {
     background-color: #effaf3;
     border: 0.1px solid black;
-    max-width: 74%;
-    width: 300px;
-    padding: 20px;
+    max-width: 65%;
+    padding: 8%;
     border-radius: 30px;
     margin: auto;
     margin-bottom: 20px;
 
 }
 
-.post i {
-    color: #56685d;
-    flex: auto;
-
-}
-
-.post .icons {
-    display: flex;
+.post img {
     width: 50%;
-    margin-left: auto;
-    margin-right: 0;
-    padding: 10px 0px;
+    height: auto;
+    margin: auto;
+}
+.open {
     text-align: right;
-
+    margin-right:  0;
+    margin-left: auto;
+    
+}
+.open a {
+    color: #56685d;
 }
 
 /* POST BY ID */
