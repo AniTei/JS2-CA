@@ -106,7 +106,9 @@ img {
     font-size: 20px;
 }
 
-
+.button-container {
+    margin: 8%
+}
 
 form {
     padding: 8%;
@@ -136,6 +138,7 @@ button {
     margin-bottom: 20px;
     font-family: 'DM Serif Display', serif;
     font-size: 20px;
+    cursor: pointer;
 
 }
 

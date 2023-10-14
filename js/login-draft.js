@@ -1,9 +1,10 @@
 const apiBaseUrl = "https://api.noroff.dev/api/v1";
-const apiRegisterEndpoint = "/social/auth/register";
+const apiRegisterEndpoint = "/social/auth/login";
 const url = apiBaseUrl + apiRegisterEndpoint;
+
 console.log(url);
 
-const registerForm = document.querySelector("#register-form");
+const registerForm = document.querySelector("#login-form");
 registerForm.addEventListener("submit", collectLoginInput);
 
 async function collectLoginInput(event) {
@@ -13,13 +14,10 @@ async function collectLoginInput(event) {
     const formData = new FormData(form);
     const informationPutIn = Object.fromEntries(formData.entries());
 
-    console.log(informationPutIn);
-    /* return; */
-
     try {
-        await LoginUser(informationPutIn)
+        await LoginUser(informationPutIn);
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
@@ -35,9 +33,7 @@ async function collectLoginInput(event) {
 
 async function LoginUser(userInput) {
 
-    console.log(userInput);
-
-    const optionsForRegistering = {
+    const optionsForLogin = {
         method: 'POST',
         body: JSON.stringify(userInput),
         headers: {
@@ -45,11 +41,35 @@ async function LoginUser(userInput) {
         },
     };
 
-    const response = await fetch(url, optionsForRegistering);
+    const response = await fetch(url, optionsForLogin);
     const json = await response.json();
 
     console.log(response);
+    console.log(json.accessToken);
 
+    localStorage.setItem('token' , json.accessToken);
 
+    return;
+
+    /* console.log (response.accessToken); */
+
+    if (response.ok) {
+        takeUserToFeed();
+    }
 }
+
+// what to do with access token
+// something abt putting it in local storage 
+// if ok take user to feed
+// but first
+// store accessitem in order to retrieve it on diff pages?
+
+// on success take user to feed
+function takeUserToFeed() {
+    window.location.href = "feed.html";
+}
+
+
+
+
 

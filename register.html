@@ -19,7 +19,7 @@
 
 
 
-    <title>Notice Login</title>
+    <title>Notice Register</title>
 </head>
 
 <body>
@@ -37,46 +37,51 @@
     <main>
 
         <img src="images/28b0342c6c1b16abbdfbc2bb1f7da585-removebg-preview.png" alt="">
-        <h1 class="notice">Notice.</h1>
-
-        <div class="intro">
-            <p>a social media platform</p>
-            <p>dedicated to noticing</p>
-        </div>
+        <h1 class="notice">register</h1>
 
 
-
-
-        <!--   <h2>register</h2> -->
 
 
         <form id="register-form">
             <div>
                 <label>username</label>
-                <input id="register-username">
+                <input name="name" id="register-username">
             </div>
             <div>
                 <label>e-mail</label>
-                <input id="register-email">
+                <input name="email" id="register-email">
             </div>
             <div>
                 <label>password</label>
-                <input id="register-password">
+                <input name="password" id="register-password">
             </div>
             <button>register</button>
         </form>
 
-        <p> The username must not contain punctuation symbols apart from underscore (_).</p>
-        <p> The email must be a valid stud.noroff.no or noroff.no email address.</p>
-        <p> The password value must be at least 8 characters.</p>
-        <p> When registered you can use your registered account to log in.</p>
+
+        <div class="button-container">
+
+            <div class="error user-exist "></div>
+            <p> The username must not contain punctuation symbols apart from underscore (_).</p>
+            <p> The email must be a valid stud.noroff.no or noroff.no email address.</p>
+            <p> The password value must be at least 8 characters.</p>
+            <p> When registered you can use your registered account to log in.</p>
+
+            <a href="login.html">
+
+
+                <button>login</button>
+            </a>
+        </div>
 
 
     </main>
     <footer>
 
     </footer>
+    <!--     <script src="js/register.js"></script> -->
     <script src="js/register.js"></script>
+
 
 </body>
 
