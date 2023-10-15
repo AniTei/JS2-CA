@@ -189,12 +189,14 @@ button {
     height: auto;
     margin: auto;
 }
+
 .open {
     text-align: right;
-    margin-right:  0;
+    margin-right: 0;
     margin-left: auto;
-    
+
 }
+
 .open a {
     color: #56685d;
 }
@@ -212,3 +214,7 @@ button {
 #delete {
     background-color: #e7cdcd;
 }
+
+/* .hidden {
+    display: none;
+} */

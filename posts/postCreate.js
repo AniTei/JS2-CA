@@ -7,7 +7,6 @@
 const apiBaseUrl = "https://api.noroff.dev/api/v1";
 const apiPostsEndpoint = "/social/posts";
 const url = apiBaseUrl + apiPostsEndpoint;
-
 console.log(url);
 
 const token = localStorage.getItem('token');
@@ -15,7 +14,6 @@ console.log(token);
 
 const publishForm = document.querySelector("#create-post");
 publishForm.addEventListener("submit", collectFormInput);
-
 
 async function collectFormInput(event) {
     event.preventDefault();
