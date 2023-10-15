@@ -9,28 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap" rel="stylesheet">
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="../styling.css">
 
-    <link rel="stylesheet" href="styling.css">
-
-    <title>Notice Filter</title>
+    <title>Notice Feed</title>
 </head>
 
 <body>
 
     <header>
 
-        <a href="index.html">index</a>
-        <a href="feed.html">feed</a>
+        <a href="../../index.html">index</a>
+        <a href="../feed.html">feed</a>
 
     </header>
     <main>
 
-        <h1>feed, testing filter</h1>
+        <h1>feed</h1>
 
 
         <!-- probably need to make filter and search into something else, 
@@ -46,33 +44,20 @@
         </div>
 
 
-        <h2>make a post</h2>
-
-        <form id="create-post">
-
-            <input type="textarea" class="publish-form">
-            <button class="publish-button clickable">publish</button>
-            <!-- make it wrap -->
-
-            
-
-        </form>
-
-
-
-        <div class="posts-container">
-
-
+        <div class="button-container">
+            <a href="post-create.html">
+                <button class="publish-button clickable">make a post</button>
+            </a>
         </div>
 
-
-
+        <div class="posts-container">
+        </div>
 
     </main>
     <footer>
 
     </footer>
-    <script src="js/filterPosts.js"></script>
+    <script src="postsInFeed.js"></script>
 </body>
 
 </html>
