@@ -3,7 +3,6 @@ const postsContainer = document.querySelector('.posts-container');
 postsContainer.innerHTML = `<div><p>Trollolol</p></div>`;
 //vurder å bruke noe annet enn innerHTML
 
-console.log("hei feed, nå skal jeg get posts fra appppppiiii")
 
 
 /* jeg vil ha pause :((( bismilla w allahu akbar w jihaad <3)))
@@ -15,14 +14,13 @@ se etter loren i pausen */
 
 
 const apiBaseUrl = "https://api.noroff.dev/api/v1";
-const apiRegisterEndpoint = "/social/posts";
-const url = apiBaseUrl + apiRegisterEndpoint;
+const apiPostsEndpoint = "/social/posts";
+const url = apiBaseUrl + apiPostsEndpoint;
 
 console.log(url);
 
 const token = localStorage.getItem('token');
 console.log(token);
-
 
 
 async function getPosts() {

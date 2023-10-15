@@ -3,42 +3,97 @@
 // sent to API and kept as an item in array
 // so it can be displayed in feed
 
-const formForNewPost = document.querySelector('#create-post');
 
-console.log(formForNewPost);
-
-
-
-/* 
 const apiBaseUrl = "https://api.noroff.dev/api/v1";
-const apiPostEndpoint = "/social/posts";
-const url = apiBaseUrl + apiPostEndpoint; */
+const apiPostsEndpoint = "/social/posts";
+const url = apiBaseUrl + apiPostsEndpoint;
+
+console.log(url);
+
+const token = localStorage.getItem('token');
+console.log(token);
+
+const publishForm = document.querySelector("#create-post");
+publishForm.addEventListener("submit", collectFormInput);
 
 
-
-function abc(event) {
+async function collectFormInput(event) {
     event.preventDefault();
-    console.log(formForNewPost[0].value)
 
-    fetch(url, {
+    const form = event.target;
+    const formData = new FormData(form);
+    const informationPutIn = Object.fromEntries(formData.entries());
+
+    console.log(informationPutIn);
+
+    /* return */;
+
+    try {
+        await sendPost(informationPutIn);
+    } catch (error) {
+        console.log(error)
+    }
+
+};
+
+
+async function sendPost(userInput) {
+
+    console.log(userInput);
+
+    const options = {
         method: 'POST',
-        body: JSON.stringify({
-            title: "Today I noticed...",
-            body: `"${formForNewPost[0].value}"`,
-        }),
         headers: {
-            'Content-type': 'application/json; charset=UTF-8',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
         },
-    })
+        body: JSON.stringify(userInput),
+
 }
 
+/* return */;
 
-formForNewPost.addEventListener('submit', abc);
+try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+
+    console.log(data);
+    console.log(response);
+
+/*     return;
+ */
+    if (response.ok) {
+
+        function takeUserToFeed() {
+            window.location.href = "feed.html";
+        }
+
+        takeUserToFeed();
+    }
+
+}
+catch (error) {
+    console.log(error);
+}
+};
 
 
-{
+/* {
     "title": "string", // Required
     "body": "string", // Optional
     "tags": ["string"], // Optional
     "media": "https://url.com/image.jpg" // Optional
-  }
+  } */
+
+
+////////////////
+
+
+
+
+
+
+
+
+
+

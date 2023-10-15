@@ -3,8 +3,8 @@ const apiRegisterEndpoint = "/social/auth/register";
 const url = apiBaseUrl + apiRegisterEndpoint;
 console.log(url);
 
-const registerForm = document.querySelector("#register-form");
-registerForm.addEventListener("submit", collectLoginInput);
+const publishForm = document.querySelector("#register-form");
+publishForm.addEventListener("submit", collectLoginInput);
 
 async function collectLoginInput(event) {
     event.preventDefault();
