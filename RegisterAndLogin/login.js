@@ -4,8 +4,8 @@ const url = apiBaseUrl + apiRegisterEndpoint;
 
 console.log(url);
 
-const registerForm = document.querySelector("#login-form");
-publishForm.addEventListener("submit", collectLoginInput);
+const loginForm = document.querySelector("#login-form");
+loginForm.addEventListener("submit", collectLoginInput);
 
 async function collectLoginInput(event) {
     event.preventDefault();
@@ -58,7 +58,7 @@ async function LoginUser(userInput) {
     
 
         function takeUserToFeed() {
-            window.location.href = "posts/feed.html";
+            window.location.href = "../posts/feed.html";
         }
 
         takeUserToFeed();
