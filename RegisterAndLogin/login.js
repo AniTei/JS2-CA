@@ -58,7 +58,7 @@ async function LoginUser(userInput) {
     
 
         function takeUserToFeed() {
-            window.location.href = "feed.html";
+            window.location.href = "posts/feed.html";
         }
 
         takeUserToFeed();

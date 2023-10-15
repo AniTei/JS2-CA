@@ -15,9 +15,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="../styling.css">
 
-    <title>Notice Feed</title>
+    <title>Notice Feed create</title>
 </head>
 
 <body>
@@ -30,42 +30,35 @@
     </header>
     <main>
 
-        <h1>feed</h1>
+        <h1>make a new post</h1>
+
+        <form id="create-post">
+
+            <label>title</label>
+            <input name="title" value="Today I noticed...">
+
+            <label>body</label>
+            <input name="body">  
+            
+           <!--  <label>tags</label>
+            <input name="tags" > -->
+
+            <label>media</label>
+            <input name="media">  
+         
+            <button class="publish-button clickable">publish</button>
+
+        </form>
 
 
-        <!-- probably need to make filter and search into something else, 
-            look at lessons in JS1, and 2-->
-        <div class="search narrow-items">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <p>search the content feed </p>
-        </div>
-
-        <div class="filter narrow-items">
-            <i class="fa-solid fa-arrow-down-wide-short"></i>
-            <p>filter the content feed</p>
-        </div>
-
-
-        <div class="button-container">
-
-             <a href="create-post.html">
-
-            <button class="publish-button clickable">make a post</button>
-
-        </a>
-        </div>
-       
-
-
-        <div class="posts-container">
-
-        </div>
 
     </main>
     <footer>
 
     </footer>
-    <script src="js/displayPosts.js"></script>
+
+    <script src="postCreate.js"></script>
+
 </body>
 
 </html>
