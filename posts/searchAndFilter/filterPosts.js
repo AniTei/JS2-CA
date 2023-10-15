@@ -6,8 +6,6 @@ postsContainer.innerHTML = `<div><p>Trollolol</p></div>`;
 console.log("hei feed, nå skal jeg get posts fra appppppiiii")
 
 
-/* jeg vil ha pause :((( bismilla w allahu akbar w jihaad <3)))
-se etter loren i pausen */
 
 
 // GET posts(how many) to inhabit feed
