@@ -112,7 +112,7 @@ p {
 }
 
 form {
-    padding: 8%;
+    padding: 4% 8%;
 }
 
 label {
@@ -163,6 +163,24 @@ button {
 .narrow-items p {
     color: #56685dad;
 }
+.filter {
+    border-bottom: solid #56685d 2px;
+    padding-bottom: 5%;
+}
+
+
+.filter-heading {
+    font-size: 20px;
+    padding: 0% 0 4% 16%;
+    font-weight: lighter;
+}
+.filter-input {
+    margin-left: 8%;
+    width: 12%;
+}
+.filter-label {
+    padding: 0;
+}
 
 .publish-form {
     height: 100px;
@@ -201,6 +219,9 @@ button {
     color: #56685d;
 }
 
+
+
+
 /* POST BY ID */
 
 .by-id-p {
@@ -218,3 +239,4 @@ button {
 /* .hidden {
     display: none;
 } */
+
