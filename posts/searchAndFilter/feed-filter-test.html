@@ -9,13 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 
     <link rel="stylesheet" href="../../styling.css">
 
-    <title>Notice Feed</title>
+    <title>Notice Feed filter test</title>
 </head>
 
 <body>
@@ -30,27 +28,45 @@
 
         <h1>feed, filter test</h1>
 
+      
 
-        <!-- probably need to make filter and search into something else, -->
-        <div class="search narrow-items">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <p>search the content feed </p>
+        <form id="search-form">
+            <label>search posts by titles</label>
+            <input name="search" id="search">
+        </form>
+
+
+        <h2 class="filter-heading">you can filter the post content feed on these categories:</h2> 
+
+    
+    
+        <div class="filter">
+             <input class="filter-input" type="radio" id="nature" name="filter_posts" value="nature">
+<label class="filter-label" for="nature">nature</label>
+            <br>
+            <input class="filter-input" type="radio" id="shocking" name="filter_posts" value="shocking"> 
+<label class="filter-label" for="shocking">shocking</label> 
+            <br>
+            <input class="filter-input" type="radio" id="javascript" name="filter_posts" value="dog">
+ <label  class="filter-label" for="dog">dog</label> 
+            
+           
         </div>
 
-        <div class="filter narrow-items">
-            <i class="fa-solid fa-arrow-down-wide-short"></i>
-            <p>filter the content feed</p>
-        </div>
 
+
+
+        
         <div class="button-container">
             <a href="post-create.html">
                 <button class="publish-button clickable">make a post</button>
             </a>
         </div>
 
+
+
         <div class="posts-container">
         </div>
-
     </main>
     <footer>
 
