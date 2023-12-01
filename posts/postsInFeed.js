@@ -41,6 +41,8 @@ async function getPosts() {
                     <p class="post-title">${json[i].title}</p>
                     <p class="post-body">${json[i].body}</p>
                     <img class="post-media" src="${json[i].media}">
+
+                    <p>tags: ${json[i].tags} </p>
                     <div class="open">
                         <a href="post-opened.html?id=${json[i].id}">
                         open
