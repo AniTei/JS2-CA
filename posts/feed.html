@@ -31,6 +31,29 @@
         <h1>feed</h1>
 
 
+        <form id="search-form">
+            <label>search posts by titles:</label>
+            <input name="search" id="search">
+        </form>
+
+
+        <h2 class="filter-heading">you can filter the post content feed on these categories:</h2>
+
+
+
+        <div class="filter">
+            <input class="filter-input" type="radio" id="hei" name="filter_posts" value="hei">
+            <label class="filter-label" for="hei">#hei</label>
+            <br>
+            <input class="filter-input" type="radio" id="test" name="filter_posts" value="test">
+            <label class="filter-label" for="test">#test</label>
+            <br>
+            <input class="filter-input" type="radio" id="none" name="filter_posts" value="none">
+            <label class="filter-label" for="none">none</label>
+
+        </div>
+
+
         <div class="button-container">
             <a href="post-create.html">
                 <button class="publish-button clickable">make a post</button>
