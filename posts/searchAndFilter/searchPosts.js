@@ -2,10 +2,10 @@
 //make new array from posts that fits condition
 //display new array as search results
 
+// MERGE //////////////////////////////////////////////////////////////////// <3 //
+
 const postsContainer = document.querySelector('.posts-container');
 const searchBar = document.querySelector('#search');
-
-//vurder å bruke noe annet enn innerHTML??
 
 const apiBaseUrl = "https://api.noroff.dev/api/v1";
 const apiPostsEndpoint = "/social/posts";
@@ -13,11 +13,21 @@ const url = apiBaseUrl + apiPostsEndpoint;
 
 const token = localStorage.getItem('token');
 
+////////////////// untill here is added to feed//////////
+
+/// take a break, make a plan, i should split alt into seperate functions //
+
+//make const options an outside thing? or global? also import export?
+
+//rename function getData
+// make displayPosts, able to display more, but sometimes, there is only one, like id
+// maybe first try to divide the original feed functin? <3
 
 
 
+// move this function into feed file
 
-async function getPosts() {
+async function getData() {
     const options = {
         method: 'GET',
         headers: {
@@ -83,26 +93,17 @@ async function getPosts() {
     }
 };
 
-getPosts();
+getData();
 
 
 
 
 
-//enough messing around, have a look at the on key up stuff js1 4.2
-
-//what is event in the case of onkeyup? what is target, where is the place to make to lowercase, what if post is upper case?y 
-
-// so we need to make the titles into lowercase aswell, 
-//for there to best mulig match, for the input and the titles to be comparable , also maybe trim?
-
+//enough messing around, have a look at the on key up stuff js1 4.2 <3
 
 // in the function that filters, post will be the argument, because all posts need to be checked for given condition
 
-
-
-// so we have a feed with posts
-
+//so we have a feed with posts
 // what we want to do is filter the posts that show up, 
 // based on the condition put into search bar
 // make new array based on the original one, and the condition put in 
@@ -112,20 +113,13 @@ getPosts();
 // when it is empty it is all posts
 
 
-
 //Practical steps:
-
 // 1 create html, search bar, form
 // 2 select form
 // 3 console log what is in the form :)))
 // 4 select original array, apply filter to it
 // 5 hardcode condition to test
 // 6 pass in user condition
-
-
-// progress
-// Able to console log the contents of the search bar , 
-//nope? it was just a console log??? nope it was the on key up :)))
 
 
 // clean up!!! 
