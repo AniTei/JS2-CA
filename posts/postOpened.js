@@ -141,9 +141,6 @@ async function updatePost(userInput) {
         }
 
 
-
-        
-
     } catch (error) {
         console.log(error)
     }
