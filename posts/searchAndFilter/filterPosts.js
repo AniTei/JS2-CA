@@ -2,15 +2,10 @@
 
 const postsContainer = document.querySelector('.posts-container');
 
-// postsContainer.innerHTML = `<div><p>Trollolol</p></div>`;
-
 
 const apiBaseUrl = "https://api.noroff.dev/api/v1";
-
 const apiFilterEndpoint = "/social/posts?_tag="
-
 const tag = "";
-
 const url = apiBaseUrl + apiFilterEndpoint + tag;
 
 console.log(url);
@@ -19,7 +14,14 @@ console.log(url);
 const token = localStorage.getItem('token');
 console.log(token);
 
-async function getPosts() {
+
+
+
+
+
+
+
+async function getData() {
 
     const options = {
         method: 'GET',
@@ -58,7 +60,7 @@ async function getPosts() {
     }
 };
 
-getPosts();
+getData();
 
 
 
@@ -140,8 +142,6 @@ heiInput.onclick = function () {
 
 testInput.onclick = function () {
 
-
-
     console.log("test onclick");
 
     const tag = "test";
@@ -156,83 +156,14 @@ testInput.onclick = function () {
 
 noneInput.onclick = function () {
 
-    getPosts();
-    
+    getData();
     console.clear();
     console.log("none onclick");
 }
 
 
-/* 
 
-async function getPosts() {
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-        },
-    }
-
-    try {
-        const respons = await fetch(url, options);
-        const data = await respons.json();
-
-        for (let i = 0; i < data.length; i++) {
-            postsContainer.innerHTML += `<div class="post">
-                    <p class="post-title">${data[i].title}</p>
-                    <p class="post-body">${data[i].body}</p>
-                    <img class="post-media" src="${data[i].media}">
-                    <div class="open">
-                        <a href="post-opened.html?id=${data[i].id}">
-                        open
-                        </a>
-                    </div>
-                </div>`;
-        }
-
-        searchBar.onkeyup = function collectSearchInput(event) {
-            const conditionFromInput = event.target.value.toLowerCase();
-
-            console.log("event:", conditionFromInput);
-        
-            const filteredPosts = data.filter((post) => {
-                if (post.title.includes(conditionFromInput)){
-
-                    // remember lower case, trim, and maybe include rather than starts with
-                    // oops something about making posts also lower case?
-                    // next make them show up in feed :))
-                    // first just make it work <3 then make it better <3
-                    return true;
-                }
-            });
-
-            postsContainer.innerHTML = "";
-            console.log (filteredPosts);
-
-            for (let i = 0; i < data.length; i++) {
-            postsContainer.innerHTML += `<div class="post">
-                    <p class="post-title">${filteredPosts[i].title}</p>
-                    <p class="post-body">${filteredPosts[i].body}</p>
-                    <img class="post-media" src="${filteredPosts[i].media}">
-                    <div class="open">
-                        <a href="post-opened.html?id=${filteredPosts[i].id}">
-                        open
-                        </a>
-                    </div>
-                </div>`;
-            }
-
-            // error in line 67, filteredPosts is undefined?? But it works?
-
-        }
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-getPosts();
- */
+   
 
 // tanker
 // filter, make new array, based on condition, 
