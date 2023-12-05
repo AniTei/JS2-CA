@@ -2,34 +2,52 @@
 
 const postsContainer = document.querySelector('.posts-container');
 
-
 const apiBaseUrl = "https://api.noroff.dev/api/v1";
-const apiFilterEndpoint = "/social/posts?_tag="
+const apiPostsEndpoint = "/social/posts";
+const apiFilterEndpoint = "?_tag="
 const tag = "";
-const url = apiBaseUrl + apiFilterEndpoint + tag;
+const url = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
 
 console.log(url);
-
 
 const token = localStorage.getItem('token');
 console.log(token);
 
+const options = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+    },
+}
+
+///////copyed until here
 
 
+function buildPosts(data) {
 
+    postsContainer.innerHTML = "";
 
+    for (let i = 0; i < data.length; i++) {
 
+        postsContainer.innerHTML += `<div class="post">
+                        <p class="post-title">${data[i].title}</p>
+                        <p class="post-body">${data[i].body}</p>
+                        <img class="post-media" src="${data[i].media}">
+                        <p>tags: ${data[i].tags} </p>
+                        <div class="open">
+                            <a href="post-opened.html?id=${data[i].id}">
+                            open
+                            </a>
+                        </div>
+                    </div>`;
+    }
+};
+
+/// copied until here
 
 
 async function getData() {
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-        },
-    }
 
     try {
 
@@ -38,29 +56,21 @@ async function getData() {
 
         console.log(data);
 
-        postsContainer.innerHTML = "";
+        buildPosts(data);
 
-        for (let i = 0; i < data.length; i++) {
-            postsContainer.innerHTML += `<div class="post">
-                    <p class="post-title">${data[i].title}</p>
-                    <p class="post-body">${data[i].body}</p>
-                    <img class="post-media" src="${data[i].media}">
-                    <p>tags: ${data[i].tags} </p>
-                    <div class="open">
-                        <a href="post-opened.html?id=${data[i].id}" >
-                        open
-                        </a>
-                    </div>
-                </div>`;
-
-                console.log("tags:" , `${data[i].tags} `)
-        }
+     
     } catch (error) {
         console.log(error);
     }
 };
 
 getData();
+
+
+////////////// I THINK THIS IS THE SAME AS MAIN FEED? lets check <3
+
+///////copyed until here
+///// ok, so far we are covered, in terms of being the same as main feed, now lets look at what is specific to ther filtering 
 
 
 
@@ -86,16 +96,13 @@ const heiInput = document.querySelector('#hei');
 const testInput = document.querySelector('#test');
 const noneInput = document.querySelector('#none');
 
+///////copyed until here
+
+
+/////what happens if i just copy in ther rest?? lest try hehe
+
 
 async function getPosts2(url2) {
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-        },
-    }
 
     try {
 
@@ -104,22 +111,8 @@ async function getPosts2(url2) {
 
         console.log(data);
 
-        postsContainer.innerHTML = "";
+        buildPosts(data);
 
-        for (let i = 0; i < data.length; i++) {
-            postsContainer.innerHTML += `<div class="post">
-                    <p class="post-title">${data[i].title}</p>
-                    <p class="post-body">${data[i].body}</p>
-                    <img class="post-media" src="${data[i].media}">
-                    <p>tags: ${data[i].tags} </p>
-                    <div class="open">
-                        <a href="post-opened.html?id=${data[i].id}" >
-                        open
-                        </a>
-                    </div>
-                </div>`;
-
-        }
     } catch (error) {
         console.log(error);
     }
@@ -130,9 +123,9 @@ heiInput.onclick = function () {
 
     const tag = "hei";
 
-    const url2 = apiBaseUrl + apiFilterEndpoint + tag;
+    const url2 = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
 
-    console.log("hei?:" ,url2)
+    console.log("hei?:", url2)
 
     getPosts2(url2);
 
@@ -146,9 +139,9 @@ testInput.onclick = function () {
 
     const tag = "test";
 
-    const url2 = apiBaseUrl + apiFilterEndpoint + tag;
+    const url2 = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
 
-    console.log("test?:" ,url2)
+    console.log("test?:", url2)
 
     getPosts2(url2);
 
@@ -163,7 +156,7 @@ noneInput.onclick = function () {
 
 
 
-   
+
 
 // tanker
 // filter, make new array, based on condition, 
@@ -195,7 +188,7 @@ noneInput.onclick = function () {
 
 // i cant remember when i logged in last , but my browser still holds a token so i didnt notoce at first,
 // it was only when i tried to log in to an other students project that I noticed :((
-    // wht do I do?
+// wht do I do?
 
-    // the blobby one works, but I probably shouldnt use that one?
+// the blobby one works, but I probably shouldnt use that one?
 
