@@ -22,7 +22,7 @@ The assignment has these required features:
 Built with:
 - HTML
 - CSS
-- Jacascript
+- Javascript
 
 A link to my trello board, to show my process:
 https://trello.com/invite/b/jH1FcMlP/ATTI89d8f191e3a86c5393c37809fb703a7e5A108A6E/js2
