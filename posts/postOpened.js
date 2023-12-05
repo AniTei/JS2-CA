@@ -15,6 +15,7 @@ console.log(token);
 
 
 ///////////////OPEN POST BY ID
+///// use seperate function for building the post
 
 async function openPost() {
     const options = {
