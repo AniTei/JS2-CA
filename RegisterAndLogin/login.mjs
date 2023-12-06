@@ -15,6 +15,8 @@ async function collectLoginInput(event) {
     const informationPutIn = Object.fromEntries(formData.entries());
 
     try {
+
+        console.log(informationPutIn)
         await LoginUser(informationPutIn);
     } catch (error) {
         console.log(error);
@@ -41,19 +43,27 @@ async function LoginUser(userInput) {
         },
     };
 
+console.log(userInput);
+
+
     const response = await fetch(url, optionsForLogin);
     const json = await response.json();
 
     console.log(response);
+
     console.log(json.accessToken);
 
+
+
     localStorage.setItem('token', json.accessToken);
+
+    console.log ("this token:",json.accessToken);
 
     /* localStorage.clear();
 
     return; */
 
-    if (response.ok) {
+  /*   if (response.ok) {
 
     
 
@@ -62,7 +72,7 @@ async function LoginUser(userInput) {
         }
 
         takeUserToFeed();
-    }
+    } */
 }
 
 // what to do with access token
@@ -74,8 +84,3 @@ async function LoginUser(userInput) {
 // on success take user to feed
 
 
-
-
-
-
-// do I also need to pass the token by a querysting? 
