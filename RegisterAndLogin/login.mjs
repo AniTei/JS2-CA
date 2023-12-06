@@ -60,11 +60,12 @@ console.log(userInput);
     console.log ("this token:",json.accessToken);
 
     const token = localStorage.getItem('token');
-console.log("from local storage" ,token);
 
-    localStorage.clear();
+    console.log("from local storage" ,token);
 
-    return;
+  /*   localStorage.clear();
+
+    return; */
 
     if (response.ok) {
 
