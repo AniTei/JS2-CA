@@ -62,11 +62,11 @@ console.log(userInput);
     const token = localStorage.getItem('token');
 console.log("from local storage" ,token);
 
-    /* localStorage.clear();
+    localStorage.clear();
 
-    return; */
+    return;
 
-  /*   if (response.ok) {
+    if (response.ok) {
 
     
 
@@ -75,7 +75,7 @@ console.log("from local storage" ,token);
         }
 
         takeUserToFeed();
-    } */
+    }
 }
 
 // what to do with access token
