@@ -1,4 +1,9 @@
-const apiBaseUrl = "https://api.noroff.dev/api/v1";
+import {apiBaseUrl} from '../url/url.mjs';
+
+
+/* 
+const apiBaseUrl = "https://api.noroff.dev/api/v1"; */
+
 const apiRegisterEndpoint = "/social/auth/register";
 const url = apiBaseUrl + apiRegisterEndpoint;
 console.log(url);

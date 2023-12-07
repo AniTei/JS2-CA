@@ -1,3 +1,8 @@
+import {apiBaseUrl} from '../url/url.mjs';
+import {apiPostsEndpoint} from '../url/url.mjs';
+
+
+
 const postContainer = document.querySelector(".post-container");
 
 const queryString = document.location.search;
@@ -5,9 +10,7 @@ const params = new URLSearchParams(queryString);
 const idPost = params.get("id");
 console.log(idPost);
 
-const apiBaseUrl = "https://api.noroff.dev/api/v1";
-const singleEntryEndpoint = "/social/posts/";
-const url = apiBaseUrl + singleEntryEndpoint + idPost;
+const url = apiBaseUrl + apiPostsEndpoint + idPost;
 console.log(url);
 
 const token = localStorage.getItem('token');

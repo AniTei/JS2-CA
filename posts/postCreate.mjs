@@ -4,8 +4,10 @@
 // so it can be displayed in feed
 
 
-const apiBaseUrl = "https://api.noroff.dev/api/v1";
-const apiPostsEndpoint = "/social/posts";
+import {apiBaseUrl} from '../url/url.mjs';
+import {apiPostsEndpoint} from '../url/url.mjs';
+
+
 const url = apiBaseUrl + apiPostsEndpoint;
 console.log(url);
 

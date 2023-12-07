@@ -1,17 +1,15 @@
+import {apiBaseUrl} from '../url/url.mjs';
+import {apiPostsEndpoint} from '../url/url.mjs';
+
 
 const postsContainer = document.querySelector('.posts-container');
 const searchBar = document.querySelector('#search');
 
 
 
-const apiBaseUrl = "https://api.noroff.dev/api/v1";
-const apiPostsEndpoint = "/social/posts";
 const apiFilterEndpoint = "?_tag="
 const tag = "";
 const url = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
-
-console.log(url);
-
 console.log(url);
 
 const token = localStorage.getItem('token');
