@@ -1,6 +1,10 @@
 import {apiBaseUrl} from '../url/url.mjs';
 import {apiPostsEndpoint} from '../url/url.mjs';
 
+import {buildPosts} from '../ui/posts.mjs';
+
+// make get data a seperate function :)
+
 
 const postsContainer = document.querySelector('.posts-container');
 const searchBar = document.querySelector('#search');
@@ -44,7 +48,7 @@ const url = apiBaseUrl + apiFilterEndpoint + tag;
 
 
 
-function buildPosts(data) {
+/* function buildPosts(data) {
 
     postsContainer.innerHTML = "";
 
@@ -62,7 +66,7 @@ function buildPosts(data) {
                     </div>
                 </div>`;
     }
-};
+}; */
 
 
 
@@ -87,7 +91,10 @@ async function getData() {
 
 
         // it's better if one function does one thing, and then just call that function inside another function :)
-        buildPosts(data);
+        buildPosts(data , postsContainer);
+
+        ///////////////this one works because i pass inn the container, and i need to do that because it is used in the function
+        // but is selected in this document :)) make files talk to each other <3
 
 
     } catch (error) {
@@ -105,7 +112,7 @@ async function searchData() {
         const respons = await fetch(url, options);
         const data = await respons.json();
 
-        buildPosts(data);
+        buildPosts(data, postsContainer);
 
     
         // make on key up into seperare function? 
@@ -126,8 +133,7 @@ async function searchData() {
                 }
             });
 
-            buildPosts(filteredPosts);
-
+            buildPosts(filteredPosts, postsContainer);
             // error in line 67, filteredPosts is undefined?? But it works?
 
         }
@@ -155,7 +161,7 @@ async function getPosts2(url2) {
 
         console.log(data);
 
-        buildPosts(data);
+        buildPosts(data , postsContainer);
 
     } catch (error) {
         console.log(error);
