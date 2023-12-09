@@ -4,8 +4,8 @@
 // so it can be displayed in feed
 
 
-import {apiBaseUrl} from '../url/url.mjs';
-import {apiPostsEndpoint} from '../url/url.mjs';
+import {apiBaseUrl} from '../api/url.mjs';
+import {apiPostsEndpoint} from '../api/url.mjs';
 
 
 const url = apiBaseUrl + apiPostsEndpoint;

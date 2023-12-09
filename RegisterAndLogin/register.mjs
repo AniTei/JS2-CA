@@ -1,4 +1,4 @@
-import {apiBaseUrl} from '../url/url.mjs';
+import {apiBaseUrl} from '../api/url.mjs';
 
 
 /* 

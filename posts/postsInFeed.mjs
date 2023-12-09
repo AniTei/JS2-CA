@@ -1,5 +1,5 @@
-import {apiBaseUrl} from '../url/url.mjs';
-import {apiPostsEndpoint} from '../url/url.mjs';
+import {apiBaseUrl} from '../api/url.mjs';
+import {apiPostsEndpoint} from '../api/url.mjs';
 
 import {buildPosts} from '../ui/posts.mjs';
 
