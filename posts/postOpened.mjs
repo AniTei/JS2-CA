@@ -1,5 +1,6 @@
-import {apiBaseUrl} from '../url/url.mjs';
-import {apiPostsEndpoint} from '../url/url.mjs';
+import { apiBaseUrl } from '../api/url.mjs';
+import { apiPostsEndpoint } from '../api/url.mjs';
+import { buildPosts } from '../ui/posts.mjs';
 
 
 
@@ -15,6 +16,10 @@ console.log(url);
 
 const token = localStorage.getItem('token');
 console.log(token);
+
+// make token exp/imp?
+
+
 
 
 ///////////////OPEN POST BY ID
@@ -32,15 +37,23 @@ async function openPost() {
     const response = await fetch(url, options);
     const json = await response.json();
 
-    console.log(json);
+    console.log("specific post:", json);
 
     postContainer.innerHTML = `<div class="post">
         <p class="post-title">${json.title}</p>
         <p class="post-body">${json.body}</p>
         <img class="post-media" src="${json.media}">
+        <p>tags: ${json.tags} </p>
     </div>`
+
+    //does it even make sense to use build posts, there is no looping here so, no? 
+    // makes the properties weird?
+
+
 }
 openPost();
+
+
 
 /////////////// DELETE POST 
 
@@ -62,11 +75,11 @@ async function deletePost() {
 
         if (json === 204) {
             postContainer.innerHTML = `<div class="post">
-        <p class="post-title">You deleted your post successfully.</p>
-        <a href="feed.html">
-            <button>go back to feed</button>
-        </a>
-    </div>`
+                        <p class="post-title">You deleted your post successfully.</p>
+                        <a href="feed.html">
+                            <button>go back to feed</button>
+                        </a>
+                    </div>`
         }
     } catch (error) {
         console.log(error)
@@ -88,6 +101,9 @@ async function deletePost() {
 // ELLER BARE GJØRE PUT?
 // FØRST BARE GJØRE PUT!
 
+// make post values into placeholders in edit form?
+// do this at the same time as getting and displaying post by id?
+
 
 
 /* 
@@ -102,10 +118,9 @@ console.log(formForUpdates);
 
 formForUpdates.addEventListener('submit', collectFormInput);
 
-
 async function collectFormInput(event) {
-    event.preventDefault();
 
+    event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
     const informationPutIn = Object.fromEntries(formData.entries());
@@ -120,6 +135,8 @@ async function collectFormInput(event) {
         console.log(error)
     }
 };
+
+
 
 async function updatePost(userInput) {
 
@@ -139,11 +156,8 @@ async function updatePost(userInput) {
         console.log(response);
 
         if (response.ok) {
-
             window.location.reload();
-
         }
-
 
     } catch (error) {
         console.log(error)
