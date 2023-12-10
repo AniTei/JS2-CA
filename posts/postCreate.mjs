@@ -1,18 +1,12 @@
-//make it so 
-//what is written into the form can be 
-// sent to API and kept as an item in array
-// so it can be displayed in feed
 
 
-import {apiBaseUrl} from '../api/url.mjs';
-import {apiPostsEndpoint} from '../api/url.mjs';
+import { apiBaseUrl } from '../api/url.mjs';
+import { apiPostsEndpoint } from '../api/url.mjs';
 
 
 const url = apiBaseUrl + apiPostsEndpoint;
-console.log(url);
 
 const token = localStorage.getItem('token');
-console.log(token);
 
 const publishForm = document.querySelector("#create-post");
 publishForm.addEventListener("submit", collectFormInput);
@@ -49,9 +43,6 @@ async function collectFormInput(event) {
     const formData = new FormData(form);
     const informationPutIn = Object.fromEntries(formData.entries());
 
-    console.log(informationPutIn);
-
-    /* return */;
 
     try {
         await sendPost(informationPutIn);
@@ -101,8 +92,6 @@ try {
 
 async function sendPost(userInput) {
 
-    console.log(userInput);
-
     const options = {
         method: 'POST',
         headers: {
@@ -111,41 +100,27 @@ async function sendPost(userInput) {
         },
         body: JSON.stringify(userInput),
 
-}
-
-
-try {
-    const response = await fetch(url, options);
-    const data = await response.json();
-
-    console.log(data);
-    console.log(response);
-
-    if (response.ok) {
-
-        function takeUserToFeed() {
-            window.location.href = "feed.html";
-        }
-
-        takeUserToFeed();
     }
 
-}
-catch (error) {
-    console.log(error);
-}
+    try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+
+
+        if (response.ok) {
+
+            function takeUserToFeed() {
+                window.location.href = "feed.html";
+            }
+
+            takeUserToFeed();
+        }
+
+    }
+    catch (error) {
+        console.log(error);
+    }
 };
-
-
-/* {
-    "title": "string", // Required
-    "body": "string", // Optional
-    "tags": ["string"], // Optional
-    "media": "https://url.com/image.jpg" // Optional
-  } */
-
-
-////////////////
 
 
 
