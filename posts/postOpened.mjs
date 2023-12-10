@@ -38,11 +38,7 @@ async function openPost() {
 
     console.log("specific post:", json);
 
-
     const { title, body, media, tags } = json;
-
-
-
 
     postContainer.innerHTML = `<div class="post">
         <p class="post-title">${title}</p>

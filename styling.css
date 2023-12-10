@@ -202,6 +202,11 @@ button {
 
 }
 
+.post-title {
+    font-family: 'DM Serif Display', serif;
+
+}
+
 .post img {
     width: 50%;
     height: auto;
