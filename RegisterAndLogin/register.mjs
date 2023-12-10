@@ -62,7 +62,7 @@ async function collectLoginInput(event) {
 
 /**Function makes use of an object to create a user in the api
  * 
- * @param {object} userInput 
+ * @param {object} userInput objest with required information to create user
  * @example 
  * ```js
  * //options contains object to create user
