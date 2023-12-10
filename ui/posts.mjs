@@ -32,7 +32,6 @@
 
 export function buildPosts(data , postsContainer) {
 
-console.log ("buildPosts function is running");
 
     postsContainer.innerHTML = "";
 
