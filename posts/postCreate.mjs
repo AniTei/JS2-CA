@@ -17,6 +17,31 @@ console.log(token);
 const publishForm = document.querySelector("#create-post");
 publishForm.addEventListener("submit", collectFormInput);
 
+
+
+
+/** This function collects the information put into a form
+ * and makes it into an object
+ * to be used in an other function
+ * 
+ * @param {*} event on submit the function runs
+ * @example 
+ * ```js
+ * //prevents refresh
+ *     event.preventDefault();
+// collects input and makes it into object
+    const form = event.target;
+    const formData = new FormData(form);
+    const informationPutIn = Object.fromEntries(formData.entries());
+
+    try {
+
+        //passes object ito function to make use of it
+        await sendPost(informationPutIn);
+ * 
+ * ```
+ */
+
 async function collectFormInput(event) {
     event.preventDefault();
 
@@ -37,6 +62,43 @@ async function collectFormInput(event) {
 };
 
 
+/** This function creates a new post from object passed in
+ * 
+ * @param {object} userInput object passed in, turns into post
+ * @example
+ * ```js
+ * // object is put into option, also token, POST
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(userInput),
+
+}
+
+try {
+
+    //fetch made to api with given options
+    const response = await fetch(url, options);
+    const data = await response.json();
+
+   
+// depending on response, user is taken to feed to see their new post in the feed
+    if (response.ok) {
+
+        function takeUserToFeed() {
+            window.location.href = "feed.html";
+        }
+
+        takeUserToFeed();
+    }
+
+}
+ * ```
+ */
+
 async function sendPost(userInput) {
 
     console.log(userInput);
@@ -51,7 +113,6 @@ async function sendPost(userInput) {
 
 }
 
-/* return */;
 
 try {
     const response = await fetch(url, options);
@@ -60,8 +121,6 @@ try {
     console.log(data);
     console.log(response);
 
-/*     return;
- */
     if (response.ok) {
 
         function takeUserToFeed() {

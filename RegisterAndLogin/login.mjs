@@ -63,6 +63,10 @@ async function collectLoginInput(event) {
 // put fetch in variable
 // what does returning the json do? 
 
+
+
+
+
 /**This functon makes use of an object and uses that informatoin to POST/login at api 
  * gets token back from api
  * if response is ok send user to feed (that requires token)
