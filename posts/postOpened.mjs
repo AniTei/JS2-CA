@@ -9,20 +9,12 @@ const postContainer = document.querySelector(".post-container");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const idPost = params.get("id");
-console.log(idPost);
 
 const url = apiBaseUrl + apiPostsEndpoint + idPost;
-console.log(url);
 
 const token = localStorage.getItem('token');
-console.log(token);
 
 
-
-
-
-///////////////OPEN POST BY ID
-///// use seperate function for building the post
 
 /**
  * This function displays the specific post opened from feed, based on it's id 
@@ -40,8 +32,6 @@ async function openPost() {
     const response = await fetch(url, options);
     const json = await response.json();
 
-    console.log("specific post:", json);
-
     const { title, body, media, tags } = json;
 
     postContainer.innerHTML = `<div class="post">
@@ -51,14 +41,11 @@ async function openPost() {
         <p>tags: ${tags} </p>
     </div>`
 
-
-
 }
 openPost();
 
 
 
-/////////////// DELETE POST 
 
 const buttonForDelete = document.querySelector('#delete');
 buttonForDelete.addEventListener('click', deletePost);
@@ -79,7 +66,7 @@ async function deletePost() {
     try {
         const response = await fetch(url, options);
         const json = await response.json();
-        console.log(json);
+      
 
         if (json === 204) {
             postContainer.innerHTML = `<div class="post">
@@ -95,34 +82,12 @@ async function deletePost() {
 };
 
 
-///////////////// EDIT POST
-
-//on clicking edit button
-// form similar to make post apperas
-// hard code form? no 
-//do inner HTML and put form in , make sure post in inhabited with post values
-// patch
-
-//////// WHAT I NEED TO DO:
-//PUT VALUES FROM POST INTO FORM?
-
-// ELLER BARE GJØRE PUT?
-// FØRST BARE GJØRE PUT!
-
-// make post values into placeholders in edit form?
-// do this at the same time as getting and displaying post by id?
-
-
-
-/* 
-const buttonForEdit = document.querySelector("#edit");
-buttonForEdit.addEventListener('click', openEditForm); */
 
 
 
 
 const formForUpdates = document.querySelector('#update-post');
-console.log(formForUpdates);
+
 
 formForUpdates.addEventListener('submit', collectFormInput);
 
@@ -133,7 +98,7 @@ async function collectFormInput(event) {
     const formData = new FormData(form);
     const informationPutIn = Object.fromEntries(formData.entries());
 
-    console.log(informationPutIn);
+ 
 
 
     try {
@@ -164,8 +129,6 @@ async function updatePost(userInput) {
         const response = await fetch(url, options);
         const json = await response.json();
 
-        console.log(json);
-        console.log(response);
 
         if (response.ok) {
             window.location.reload();
