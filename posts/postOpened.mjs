@@ -24,6 +24,10 @@ console.log(token);
 ///////////////OPEN POST BY ID
 ///// use seperate function for building the post
 
+/**
+ * This function displays the specific post opened from feed, based on it's id 
+ */
+
 async function openPost() {
     const options = {
         method: 'GET',
@@ -47,8 +51,6 @@ async function openPost() {
         <p>tags: ${tags} </p>
     </div>`
 
-    //does it even make sense to use build posts, there is no looping here so, no? 
-    // makes the properties weird?
 
 
 }
@@ -60,6 +62,11 @@ openPost();
 
 const buttonForDelete = document.querySelector('#delete');
 buttonForDelete.addEventListener('click', deletePost);
+
+/**
+ * This post deletes the specific post opened and displayed on the page
+ * it also tells the user the post was deleted
+ */
 
 async function deletePost() {
     const options = {
@@ -128,7 +135,6 @@ async function collectFormInput(event) {
 
     console.log(informationPutIn);
 
-    /*  return; */
 
     try {
         await updatePost(informationPutIn);
@@ -138,7 +144,12 @@ async function collectFormInput(event) {
 };
 
 
-
+/**This function makes use of an object passed in, and updated an already existing post
+ * the id is kept, but the values of the keys may be changed,
+ * the window reloads on ok
+ * 
+ * @param {object} userInput 
+ */
 async function updatePost(userInput) {
 
     const options = {
