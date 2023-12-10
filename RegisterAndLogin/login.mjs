@@ -1,4 +1,3 @@
-/* const apiBaseUrl = "https://api.noroff.dev/api/v1"; */
 
 import {apiBaseUrl} from '../api/url.mjs';
 
@@ -10,6 +9,33 @@ console.log(url);
 const loginForm = document.querySelector("#login-form");
 loginForm.addEventListener("submit", collectLoginInput);
 
+
+
+
+
+
+/**The function collects whatever input the user has put into the form
+ * the input is then passed into a function that makes use of that information
+ * 
+ * @param {*} event User clicks login, submit
+ * ```js
+ * //prevents refresh
+ *  event.preventDefault();
+
+//form targeted by submit
+// fordata turnes into object
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const informationPutIn = Object.fromEntries(formData.entries());
+
+    try {
+
+        //variable passe to a function that makes use of object
+        await LoginUser(informationPutIn);
+ * 
+ * ```
+ */
 async function collectLoginInput(event) {
 
     event.preventDefault();
@@ -21,7 +47,7 @@ async function collectLoginInput(event) {
     try {
 
         console.log(informationPutIn)
-        
+
         await LoginUser(informationPutIn);
 
     } catch (error) {
@@ -37,7 +63,29 @@ async function collectLoginInput(event) {
 // put fetch in variable
 // what does returning the json do? 
 
+/**This functon makes use of an object and uses that informatoin to POST/login at api 
+ * gets token back from api
+ * if response is ok send user to feed (that requires token)
+ * 
+ * @param {object} userInput 
+ * ```js
+ *  
+ * const response = await fetch(url, optionsForLogin);
+    const json = await response.json();
+//puts token recieved in local storage
+    localStorage.setItem('token', json.accessToken);
 
+// sends user to feed
+    if (response.ok) {
+
+        function takeUserToFeed() {
+            window.location.href = "../posts/feed.html";
+        }
+        takeUserToFeed();
+    }
+ * 
+ * ```
+ */
 
 async function LoginUser(userInput) {
 
@@ -80,6 +128,9 @@ console.log(userInput);
         takeUserToFeed();
     }
 }
+
+
+
 
 // what to do with access token
 // something abt putting it in local storage 
