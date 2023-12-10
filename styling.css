@@ -1,0 +1,247 @@
+body {
+    background: url(images/augustine-wong-AMi8QWJ5Dec-unsplash.jpg);
+    background-color: brown;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+header {
+    font-family: 'DM Serif Display', serif;
+    background-color: white;
+    height: 50px;
+    box-shadow: 0px 3px 10px #56685d;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    flex: auto;
+    text-align: center;
+    margin: auto;
+}
+
+.disabled {
+    color: #7b8980;
+}
+
+main {
+    background-color: white;
+    padding-bottom: 200px;
+    height: fit-content;
+    max-width: 800px;
+    margin: auto;
+
+}
+
+h1 {
+    text-transform: lowercase;
+    font-size: 48px;
+    padding: 50px 0 50px 16%;
+    font-family: 'DM Serif Display', serif;
+    margin: 0;
+
+}
+
+h2 {
+    font-family: 'DM Serif Display', serif;
+    padding: 8% 0 0 8%;
+    margin: 0;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 8%;
+}
+
+/* INDEX */
+
+.poppy-img {
+    width: 70%;
+    position: relative;
+    top: 50px;
+}
+
+.notice {
+    padding: 0 0 0 16%;
+}
+
+.intro p {
+    font-family: 'DM Serif Display', serif;
+    margin: 0 0 0 auto;
+    font-size: 20px;
+    padding-right: 8%;
+    text-align: right;
+}
+
+.intro {
+    margin-bottom: 80px;
+}
+
+
+.direction p {
+    font-family: 'DM Serif Display', serif;
+    margin: 5px;
+
+}
+
+.direction {
+    text-align: center;
+    margin: 50px auto;
+    font-size: 20px;
+}
+
+.button-container {
+    margin: 8%
+}
+
+form {
+    padding: 4% 8%;
+}
+
+label {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    padding: 20px 0 0 10%;
+}
+
+input {
+    background-color: #E6ECE8;
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #CDE7D7;
+    width: 100%;
+    height: 40px;
+    margin: 8% 0;
+
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+
+
+/* FEED */
+
+
+.narrow-items {
+    height: 50px;
+    border-bottom: solid #56685d 2px;
+    display: flex;
+
+}
+
+.narrow-items i {
+    color: #56685d;
+    padding: 18px;
+}
+
+.narrow-items p {
+    color: #56685dad;
+}
+.filter {
+    border-bottom: solid #56685d 2px;
+    padding-bottom: 5%;
+}
+
+
+.filter-heading {
+    font-size: 20px;
+    padding: 0% 0 4% 16%;
+    font-weight: lighter;
+}
+.filter-input {
+    margin-left: 8%;
+    width: 12%;
+}
+.filter-label {
+    padding: 0;
+}
+
+.publish-form {
+    height: 100px;
+    background-color: #CDE7D7;
+}
+
+.publish-button {
+    margin: 0 0 50px 0;
+}
+
+.post {
+    background-color: #effaf3;
+    border: 0.1px solid black;
+    max-width: 65%;
+    padding: 8%;
+    border-radius: 30px;
+    margin: auto;
+    margin-bottom: 20px;
+
+}
+
+.post-title {
+    font-family: 'DM Serif Display', serif;
+
+}
+
+.post img {
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+.open {
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+
+}
+
+.open a {
+    color: #56685d;
+}
+
+
+
+
+/* POST BY ID */
+
+.by-id-p {
+    margin-left: 8%;
+}
+
+.post-container div {
+    padding: 20px;
+}
+
+#delete {
+    background-color: #e7cdcd;
+}
+
+/* .hidden {
+    display: none;
+} */
+

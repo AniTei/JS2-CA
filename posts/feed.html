@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../styling.css">
+
+    <script type="module" src="postsInFeed.mjs"></script>
+
+    <title>Notice Feed</title>
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html">index</a>
+        <a href="feed.html">feed</a>
+
+    </header>
+    <main>
+
+        <h1>feed</h1>
+
+
+        <form id="search-form">
+            <label>search posts by titles:</label>
+            <input name="search" id="search">
+        </form>
+
+
+        <h2 class="filter-heading">you can filter the post content feed on these categories:</h2>
+
+
+
+        <div class="filter">
+            <input class="filter-input" type="radio" id="hei" name="filter_posts" value="hei">
+            <label class="filter-label" for="hei">#hei</label>
+            <br>
+            <input class="filter-input" type="radio" id="test" name="filter_posts" value="test">
+            <label class="filter-label" for="test">#test</label>
+            <br>
+            <input class="filter-input" type="radio" id="none" name="filter_posts" value="none">
+            <label class="filter-label" for="none">none</label>
+
+        </div>
+
+
+        <div class="button-container">
+            <a href="post-create.html">
+                <button class="publish-button clickable">make a post</button>
+            </a>
+        </div>
+
+        <div class="posts-container">
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

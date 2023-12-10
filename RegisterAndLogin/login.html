@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../styling.css">
+
+    <script type="module" src="login.mjs"></script>
+
+    <title>Notice Login</title>
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html">index</a>
+        <a href="../about.html">about</a>
+        <a href="../posts/feed.html" class="disabled">feed</a>
+
+    </header>
+    <main>
+
+        <img class="poppy-img" src="../images/28b0342c6c1b16abbdfbc2bb1f7da585-removebg-preview.png" alt="">
+        <h1 class="notice">login</h1>
+
+        <form id="login-form">
+
+            <label>email</label>
+            <input name="email">
+
+            <label>password</label>
+            <input name="password">
+
+            <button>login</button>
+        </form>
+
+        <div class="error"></div>
+
+        <div class="direction">
+            <p>don't have a user yet?</p>
+            <p>make one</p>
+            <i class="fa-solid fa-angles-down"></i>
+        </div>
+
+        <div class="button-container">
+            <a href="register.html">
+                <button>register</button>
+            </a>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

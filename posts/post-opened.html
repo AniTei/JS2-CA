@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styling.css">
+
+    <script type="module" src="postOpened.mjs"></script>
+    <title>Notice Post</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html">index/ log out</a>
+        <a href="feed.html">feed</a>
+
+    </header>
+    <main>
+
+        <h1>post</h1>
+
+        <p class="by-id-p">You opened this post:</p>
+
+        <div class="post-container">
+        </div>
+
+        <div class="button-container">
+
+            <button class="clickable" id="delete">delete</button>
+
+<!--             <button id="edit" class="clickable">edit</button>-->
+
+            <h2>edit:</h2>
+
+            <form id="update-post" class="hidden">
+
+                <label>title</label>
+                <input name="title" value="">
+
+                <label>body</label>
+                <input name="body">
+
+                <!--  <label>tags</label>
+                    <input name="tags" > -->
+
+                <label>media</label>
+                <input name="media">
+
+                <button class="update-button clickable">update</button>
+
+            </form>
+
+        </div>
+
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
