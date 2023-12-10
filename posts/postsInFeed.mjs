@@ -27,30 +27,6 @@ const options = {
 
 
 
-
-
-
-
-
-
-
-/* /////////////
-
-
-
-
-
-
-
-
-//ops her er det no jeg mp rydde i 
-
-//i think i can use the url with the filter endpoint as long as the tag is empty
-//////////// */
-
-
-
-
 async function getData() {
 
     try {
@@ -127,6 +103,14 @@ const heiInput = document.querySelector('#hei');
 const testInput = document.querySelector('#test');
 const noneInput = document.querySelector('#none');
 
+
+
+
+/**This function makes an api call to an endpoint that returns certain posts
+ * response is passed to function that builds posts from data
+ * 
+ * @param {string} url2 URL that matches whatever we are trying to filter by
+ */
 
 async function filterPosts(url2) {
 
