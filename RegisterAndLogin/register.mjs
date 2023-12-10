@@ -52,12 +52,6 @@ async function collectLoginInput(event) {
 
 
 
-// add async/await
-// maybe move the url info?
-// put fetch in variable
-// what does returning the json do? 
-
-
 /**Function makes use of an object to create a user in the api
  * 
  * @param {object} userInput objest with required information to create user
