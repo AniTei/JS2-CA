@@ -2,7 +2,7 @@ import {apiBaseUrl} from '../api/url.mjs';
 
 const apiRegisterEndpoint = "/social/auth/register";
 const url = apiBaseUrl + apiRegisterEndpoint;
-console.log(url);
+
 
 const publishForm = document.querySelector("#register-form");
 publishForm.addEventListener("submit", collectLoginInput);
@@ -38,8 +38,6 @@ async function collectLoginInput(event) {
     const form = event.target;
     const formData = new FormData(form);
     const informationPutIn = Object.fromEntries(formData.entries());
-
-    console.log(informationPutIn);
     
 
     try {
@@ -81,8 +79,6 @@ async function collectLoginInput(event) {
  * ```
  */
 async function registerUser(userInput) {
-
-    console.log(userInput);
 
     const optionsForRegistering = {
         method: 'POST',
