@@ -165,3 +165,47 @@ async function updatePost(userInput) {
 
 };
 
+
+
+//////////////////////////// testing something
+
+   const options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    }
+
+
+async function getData () {
+    
+ 
+    const response = await fetch(url, options);
+    const data = await response.json();
+
+
+    console.log ("data from testFunction:", data)
+
+    return data;
+
+    //this function needs to actually run
+
+}
+
+/* getData(); */
+
+
+// very unsure about this :( keep trying <3
+
+async function testFunction (data1){
+
+/*     await getData()
+ */    
+    console.log ("am i able to log the return:" ,data1)
+
+    // this function is being run at least , it logs the 
+}
+
+testFunction(getData);
+

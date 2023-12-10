@@ -1,6 +1,5 @@
 import {apiBaseUrl} from '../api/url.mjs';
 import {apiPostsEndpoint} from '../api/url.mjs';
-
 import {buildPosts} from '../ui/posts.mjs';
 
 // make get data a seperate function :)
@@ -8,7 +7,6 @@ import {buildPosts} from '../ui/posts.mjs';
 
 const postsContainer = document.querySelector('.posts-container');
 const searchBar = document.querySelector('#search');
-
 
 
 const apiFilterEndpoint = "?_tag="
@@ -30,47 +28,12 @@ const options = {
 /* /////////////
 
 
-const apiFilterEndpoint = "/social/posts?_tag="
-
-const tag = "";
-
-const url = apiBaseUrl + apiFilterEndpoint + tag;
-
-"https://api.noroff.dev/api/v1" "/social/posts" "/social/posts?_tag=" ""
 
 
 //ops her er det no jeg mp rydde i 
 
 //i think i can use the url with the filter endpoint as long as the tag is empty
 //////////// */
-
-
-
-
-
-/* function buildPosts(data) {
-
-    postsContainer.innerHTML = "";
-
-    for (let i = 0; i < data.length; i++) {
-
-        postsContainer.innerHTML += `<div class="post">
-                    <p class="post-title">${data[i].title}</p>
-                    <p class="post-body">${data[i].body}</p>
-                    <img class="post-media" src="${data[i].media}">
-                    <p>tags: ${data[i].tags} </p>
-                    <div class="open">
-                        <a href="post-opened.html?id=${data[i].id}">
-                        open
-                        </a>
-                    </div>
-                </div>`;
-    }
-}; */
-
-
-
-
 
 
 
@@ -106,7 +69,7 @@ getData();
 
 
 
-async function searchData() {
+async function searchPosts() {
 
     try {
         const respons = await fetch(url, options);
@@ -142,7 +105,7 @@ async function searchData() {
     }
 };
 
-searchData();
+searchPosts();
 
 
 
@@ -152,7 +115,7 @@ const testInput = document.querySelector('#test');
 const noneInput = document.querySelector('#none');
 
 
-async function getPosts2(url2) {
+async function filterPosts(url2) {
 
     try {
 
@@ -173,11 +136,11 @@ heiInput.onclick = function () {
 
     const tag = "hei";
 
-    const url2 = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
+    const filterURL = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
 
-    console.log("hei?:", url2)
+    console.log("hei?:", filterURL)
 
-    getPosts2(url2);
+    filterPosts(filterURL);
 
     // i should have a seperate functions for seperate tasks! :((( puke
 }
@@ -189,11 +152,11 @@ testInput.onclick = function () {
 
     const tag = "test";
 
-    const url2 = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
+    const filterURL = apiBaseUrl + apiPostsEndpoint + apiFilterEndpoint + tag;
 
-    console.log("test?:", url2)
+    console.log("test?:", filterURL)
 
-    getPosts2(url2);
+    filterPosts(filterURL);
 
 }
 

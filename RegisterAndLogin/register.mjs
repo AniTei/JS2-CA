@@ -1,9 +1,5 @@
 import {apiBaseUrl} from '../api/url.mjs';
 
-
-/* 
-const apiBaseUrl = "https://api.noroff.dev/api/v1"; */
-
 const apiRegisterEndpoint = "/social/auth/register";
 const url = apiBaseUrl + apiRegisterEndpoint;
 console.log(url);
@@ -22,7 +18,9 @@ async function collectLoginInput(event) {
     /* return; */
 
     try {
-        await LoginUser(informationPutIn)
+        
+        await registerUser(informationPutIn)
+
     } catch (error) {
         console.log(error)
     }
@@ -38,7 +36,7 @@ async function collectLoginInput(event) {
 
 
 
-async function LoginUser(userInput) {
+async function registerUser(userInput) {
 
     console.log(userInput);
 

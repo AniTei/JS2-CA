@@ -1,5 +1,9 @@
 // put the function for building the html in here
 
+// try to use destructuring
+// put data in curly braces
+//but what about the loop
+
 
 export function buildPosts(data , postsContainer) {
 

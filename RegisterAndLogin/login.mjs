@@ -2,8 +2,8 @@
 
 import {apiBaseUrl} from '../api/url.mjs';
 
-const apiRegisterEndpoint = "/social/auth/login";
-const url = apiBaseUrl + apiRegisterEndpoint;
+const apiLoginEndpoint = "/social/auth/login";
+const url = apiBaseUrl + apiLoginEndpoint;
 
 console.log(url);
 
@@ -11,6 +11,7 @@ const loginForm = document.querySelector("#login-form");
 loginForm.addEventListener("submit", collectLoginInput);
 
 async function collectLoginInput(event) {
+
     event.preventDefault();
 
     const form = event.target;
@@ -20,7 +21,9 @@ async function collectLoginInput(event) {
     try {
 
         console.log(informationPutIn)
+        
         await LoginUser(informationPutIn);
+
     } catch (error) {
         console.log(error);
     }
@@ -53,7 +56,6 @@ console.log(userInput);
     const json = await response.json();
 
     console.log(response);
-
     console.log(json.accessToken);
 
 
@@ -72,12 +74,9 @@ console.log(userInput);
 
     if (response.ok) {
 
-    
-
         function takeUserToFeed() {
             window.location.href = "../posts/feed.html";
         }
-
         takeUserToFeed();
     }
 }
