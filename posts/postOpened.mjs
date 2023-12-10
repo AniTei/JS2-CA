@@ -1,6 +1,6 @@
 import { apiBaseUrl } from '../api/url.mjs';
 import { apiPostsEndpoint } from '../api/url.mjs';
-import { buildPosts } from '../ui/posts.mjs';
+
 
 
 
@@ -17,7 +17,6 @@ console.log(url);
 const token = localStorage.getItem('token');
 console.log(token);
 
-// make token exp/imp?
 
 
 
@@ -39,11 +38,17 @@ async function openPost() {
 
     console.log("specific post:", json);
 
+
+    const { title, body, media, tags } = json;
+
+
+
+
     postContainer.innerHTML = `<div class="post">
-        <p class="post-title">${json.title}</p>
-        <p class="post-body">${json.body}</p>
-        <img class="post-media" src="${json.media}">
-        <p>tags: ${json.tags} </p>
+        <p class="post-title">${title}</p>
+        <p class="post-body">${body}</p>
+        <img class="post-media" src="${media}">
+        <p>tags: ${tags} </p>
     </div>`
 
     //does it even make sense to use build posts, there is no looping here so, no? 
@@ -167,45 +172,5 @@ async function updatePost(userInput) {
 
 
 
-//////////////////////////// testing something
 
-   const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-        },
-    }
-
-
-async function getData () {
-    
- 
-    const response = await fetch(url, options);
-    const data = await response.json();
-
-
-    console.log ("data from testFunction:", data)
-
-    return data;
-
-    //this function needs to actually run
-
-}
-
-/* getData(); */
-
-
-// very unsure about this :( keep trying <3
-
-async function testFunction (data1){
-
-/*     await getData()
- */    
-    console.log ("am i able to log the return:" ,data1)
-
-    // this function is being run at least , it logs the 
-}
-
-testFunction(getData);
 
